@@ -1,0 +1,142 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./images/bg-intro-desktop.png);
+    background-color: hsl(0, 100%, 74%);
+    font-family: 'Poppins', sans-serif;
+}
+
+#container {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+section {
+    width: 50%; 
+    padding: 2%;
+    margin: 0px auto;
+}
+
+#text {
+    padding: 15px 50px;
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+#merchandise {
+    width: 500px;
+    padding: 15px;
+    margin: 20px 0px;
+    border-radius: 8px;
+    box-shadow: 0px 6px 3px  hsla(249, 10%, 26%, 0.3);
+    background-color:  hsl(248, 32%, 49%);
+}
+
+
+
+section #input {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background-color: white;
+    padding: 50px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 6px 3px  hsla(249, 10%, 26%, 0.3);
+}
+
+input {
+    border-radius: 4px;
+    padding: 13px;
+    border: 1px solid hsla(249, 10%, 26%, 0.2);
+}
+
+
+button {
+    padding: 15px;
+    border: 1px;
+    border-radius: 8px;
+    background-color: hsl(154, 59%, 51%);
+    box-shadow: 0px 3px 1px  hsl(154, 60%, 39%);
+    color: white;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+button:active {
+    opacity: .9;
+}
+
+#term {
+    font-size: 12px;
+    text-align: center;
+    opacity: .7;
+
+    margin-top: 8px;
+}
+
+a {
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+}
+
+@media (max-width: 1100px)
+{
+  #container
+   {
+    display: flex;
+   }
+   #merchandise {
+    width: 300px;
+    text-align: center;
+   }
+   section #input {
+    width: 300px;
+   }
+}
+
+
+@media (max-width: 700px)
+{
+  #container
+   {
+    display: block;
+   }
+   #merchandise {
+    width: 300px;
+    text-align: center;
+   }
+   section #input {
+    width: 300px;
+   }
+}
+
+
+colors {
+    color: hsl(246, 25%, 77%);
+    color: hsl(249, 10%, 26%);
+    color: hsl(248, 32%, 49%);
+    color: hsl(154, 59%, 51%);
+    color: hsl(0, 100%, 74%) ;
+}
+
+
+em {
+    display: flex;
+    justify-content: right;
+    font-size: 10px;
+    text-transform: inherit;
+    color: hsl(0, 100%, 74%);
+    margin-bottom: 12px;
+}
