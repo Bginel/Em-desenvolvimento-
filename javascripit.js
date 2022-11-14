@@ -11,10 +11,13 @@ let EmailError = document.querySelector('#EmailError')
 let password = document.querySelector('#password')
 let PasswordError = document.querySelector('#SenhaErro')
 
+var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+
 function FN() {
     
     if(FirstName.value == '') {
-        FirstName.style.border = '1px solid hsl(0, 100%, 74%)'
+        FirstName.style.border = '2px solid hsl(0, 100%, 74%)'
         FirstName.style.background = 'url(./images/icon-error.svg) no-repeat right'
         FirstNameError.innerText = ' First Name cannot be empty'
     }
@@ -26,7 +29,7 @@ function FN() {
 
 function LN() {
     if(LastName.value == '') {
-        LastName.style.border = '1px solid hsl(0, 100%, 74%)'
+        LastName.style.border = '2px solid hsl(0, 100%, 74%)'
         LastName.style.background = 'url(./images/icon-error.svg) no-repeat right'
         LastNameError.innerText = ' Last Name cannot be empty'
     }
@@ -35,13 +38,12 @@ function LN() {
     }
 }
 
-function address() {
-    
-    if(email.value == '') {
-        email.style.border = '1px solid hsl(0, 100%, 74%)'
+function address(E) {
+
+    if( email.value == '') {
+        email.style.border = '2px solid hsl(0, 100%, 74%)'
         email.style.background = 'url(./images/icon-error.svg) no-repeat right'
-        email.style.color = 'hsl(0, 100%, 74%)'
-        email.value = 'email@exemple/com'
+        email.placeholder = 'email@exemple/com'
         EmailError.innerText = 'Looks like this is not an email'
     }
      else { 
@@ -52,24 +54,42 @@ function address() {
 function senha() {
    
     if(password.value == '') {
-        password.style.border = '1px solid hsl(0, 100%, 74%)'
+        password.style.border = '2px solid hsl(0, 100%, 74%)'
         password.style.background = 'url(./images/icon-error.svg) no-repeat right'
         PasswordError.innerText = 'Password cannot be empty'
     }
      else { 
         return
     }
+} 
+
+
+function validateEmail(){
+   
+       if (reg.test(email.value) == false){
+            email.style.border = '2px solid hsl(0, 100%, 74%)'
+            email.style.background = 'url(./images/icon-error.svg) no-repeat right'
+            EmailError.innerText = 'Looks like this is not an email';
+        }
+        else{
+            return;
+       }
 }
 
-function teste() {
+
+ function teste() {
     FN()
     LN()
     address()
+    validateEmail()
     senha()
 
-    if (FN(), LN(), address(), senha() == false){
-        return console.log('Você se cadastrou')
+
+    if (FirstName.value == '' || LastName.value == '' || email.value == '' || password.value == '' || reg.test(email.value) == false){
+        return
     } else  {
-        return console.log('deu erro')
-    }
+        alert('Parabéns pelo cadastro!')
+        window.location.reload()
+    } 
+
 }
